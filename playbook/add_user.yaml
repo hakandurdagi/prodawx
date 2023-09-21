@@ -1,12 +1,11 @@
----
- - name: Create a login user
-     user:
-      name: "{{ username }}"
-      password: "{{ password }}"
-      groups: # Empty by default, here we give it some groups
-       - sudo
-      state: present
-      shell: /bin/bash       # Defaults to /bin/bash
-      system: no             # Defaults to no
-      createhome: yes        # Defaults to yes
-      home: /home/fideloper  # Defaults to /home/<username>
+- name: Create users
+  hosts: "{{ hostname }}"
+  become: yes  # Run tasks with root/sudo privileges
+
+  tasks:
+    - name: Create user
+      user:
+        name: "{{ username }}"
+        password: "{{ 'mypassword' | password_hash('sha512') }}"  # Encrypted password
+        state: present  # Ensure the user is present
+        createhome: yes  # Create the user's home directory
