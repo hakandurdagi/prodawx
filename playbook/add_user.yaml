@@ -5,6 +5,6 @@
   tasks:
     -name: Remove the username
      ansible.builtin.user:
-       name: "{{ username }}"
+       name: bmcdiscovery
        state: absent
        remove: yes
