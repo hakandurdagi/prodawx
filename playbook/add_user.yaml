@@ -3,7 +3,7 @@
   become: yes  # Run tasks with root/sudo privileges
 
   tasks:
-    - name: Create user
+  - name: Create user
       user:
         name: "{{ username }}"
         password: "{{ 'mypassword' | password_hash('sha512') }}"  # Encrypted password
