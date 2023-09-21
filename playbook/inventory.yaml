@@ -1,1 +1,7 @@
-sada
+---
+webservers:
+  hosts:
+    DfApiDOAgent01.ozon.com.tr:
+	  DfApiDOAgent02.ozon.com.tr:
+	  DfApiDOAgent03.ozon.com.tr:
+	  DfApiDOAgent04.ozon.com.tr:
