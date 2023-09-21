@@ -1,10 +1,11 @@
 ---
-- name: user module
-  hosts: all
-  become: true
-  tasks:
-    -name: Remove the username
-     ansible.builtin.user:
-       name: bmcdiscovery
-       state: absent
-       remove: yes
+ - name: add ansible user
+   hosts: all
+   become: true
+   become_method: sudo
+   become_user: root
+
+   tasks:
+     - user:
+       name: ansible
+       groups: ansible
