@@ -1,1 +1,7 @@
-
+---
+vcenter_datacenter: "VxRail-Datacenter"
+vcenter_validate_certs: false
+vcenter_destination_folder: "deployed_vm"
+vm_state: "poweredon"
+vcenter_cluster: VxRail-Virtual-SAN-Cluster-67966368-ff9e-4875-9f72-ad5aef3e42a3
+hostname: "hostname"
