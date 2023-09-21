@@ -1,7 +1,9 @@
-- name: Create users
+---
+- name: Create a user
+  pre_tasks:
+    - include_vars: vars.yml
   hosts: "{{ hostname }}"
   become: yes  # Run tasks with root/sudo privileges
-
   tasks:
   - name: Create user
       user:
