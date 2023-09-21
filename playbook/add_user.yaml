@@ -1,6 +1,10 @@
 ---
-- name: Remove the username
-  ansible.builtin.user:
-    name: "{{ username }}"
-    state: absent
-    remove: yes
+- name: user module
+  hosts: all
+  become: true
+  tasks:
+    -name: Remove the username
+     ansible.builtin.user:
+       name: "{{ username }}"
+       state: absent
+       remove: yes
