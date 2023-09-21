@@ -1,13 +1,6 @@
 ---
-- name: Create a user
-  pre_tasks:
-    - include_vars: vars.yaml
-  hosts: all
-  become: yes
-  tasks:
-  - name: Create user
-      user:
-        name: "{{ username }}"
-        password: "{{ 'mypassword' | password_hash('sha512') }}"  # Encrypted password
-        state: present  # Ensure the user is present
-        createhome: yes  # Create the user's home directory
+- name: Remove the username
+  ansible.builtin.user:
+    name: "{{ username }}"
+    state: absent
+    remove: yes
