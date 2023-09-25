@@ -1,5 +1,5 @@
 ---
-- hosts: all
+- hosts: {{ name }}
   become: yes
   become_user: ansadmin
   tasks:
