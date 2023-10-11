@@ -1,5 +1,5 @@
 ---
-- hosts: {{ name }}
+- hosts: Ubuntu_Servers
   become: yes
   become_user: ansadmin
   tasks:
